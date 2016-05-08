@@ -8,6 +8,12 @@ MovieResult = collections.namedtuple(
 
 class MovieClient:
     def __init__(self, search_text):
+
+        if not search_text or not search_text.strip():
+            raise ValueError("You must specify a search string")
+
+
+
         self.search_text = search_text
 
     def perform_search(self):
